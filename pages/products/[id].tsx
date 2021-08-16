@@ -84,7 +84,7 @@ const ProductDetailPage: FC = () => {
       <h1>{product.name ? product.name : null}</h1>
       <h2>{product.price ? product.price : null}</h2>
       <p>{product.description ? product.description : null}</p>
-      <button onClick={handleClick}>購入する</button>
+      <button onClick={handleClick}>カートに入れる</button>
     </Layout>
   );
 };

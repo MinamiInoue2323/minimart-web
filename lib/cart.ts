@@ -16,3 +16,7 @@ export function getCartItemCount(): number{
 
 
 }
+
+export function clearCart(): void{
+  localStorage.removeItem("cart");
+}

@@ -35,6 +35,8 @@
   color: white;
   font-size: 15px;
   font-weight: bold;
+  background-color: tomato;
+  padding:0px 5px;
 }
 
 .productName {

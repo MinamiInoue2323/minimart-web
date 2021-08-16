@@ -1,6 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "../index.module.css";
+import productstyles from "../product.module.css";
 import { Product, getProduct } from "../../lib/product";
 import { CartItem, getCartItemCount } from "../../lib/cart";
 import { Layout } from "../../components/Layout";
@@ -78,13 +79,14 @@ const ProductDetailPage: FC = () => {
 
   return (
     <Layout cartItemCount={ allItemQuantity}>
-      <div className="img">
-        {product.imageUrl ? <img className="recipeImage" src={product.imageUrl} alt="" width="300" /> : null}
+      <div className={styles.imageWrapper}>
+        {product.imageUrl ? <img className={productstyles.fullimage} src={product.imageUrl} alt=""  /> : null}
       </div>
-      <h1>{product.name ? product.name : null}</h1>
-      <h2>{product.price ? product.price : null}</h2>
+      <h1>{product.name ? product.name : null}  {product.price ? product.price : null}円</h1>
       <p>{product.description ? product.description : null}</p>
-      <button onClick={handleClick}>カートに入れる</button>
+      <div className={productstyles.buttonwrapper}>
+        <button className={ productstyles.commonbutton}onClick={handleClick}>カートに入れる</button>
+      </div>
     </Layout>
   );
 };

@@ -5,6 +5,7 @@ import { listProducts, Product } from "../lib/product";
 import { Layout } from "../components/Layout";
 import { CartItem, clearCart, getCartItemCount } from "../lib/cart";
 import { useRouter } from "next/dist/client/router";
+import cartstyles from "./product.module.css";
 
 const CartPage: FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -48,8 +49,10 @@ const CartPage: FC = () => {
           </li>
         ))}
       </ul>
-      <div>合計{ amount}円</div>
-      <button onClick={handleClick}>購入する</button>
+      <div className={cartstyles.amount}>合計{amount}円</div>
+      <div className={cartstyles.buttonwrapper}>
+        <button className={ cartstyles.commonbutton} onClick={handleClick}>購入する</button>
+      </div>
     </Layout>
   );
 };

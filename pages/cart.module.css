@@ -1,0 +1,31 @@
+.commonbutton{
+  border: none;
+  width:80vw;
+  height:10vh;
+  border-radius: 10px;
+  background-color: tomato;
+  color:white;
+}
+
+.buttonwrapper{
+  display: flex;
+  justify-content: center;
+}
+.amount{
+  text-align: right;
+
+}
+.listproduct2{
+  height:20vh;
+
+}
+.iteminfo{
+
+}
+.image {
+  height:20vh;
+}
+.amount{
+  text-align: right;
+  font-size:50px;
+}

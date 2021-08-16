@@ -5,7 +5,7 @@ import { listProducts, Product } from "../lib/product";
 import { Layout } from "../components/Layout";
 import { CartItem, clearCart, getCartItemCount } from "../lib/cart";
 import { useRouter } from "next/dist/client/router";
-import cartstyles from "./product.module.css";
+import cartstyles from "./cart.module.css";
 
 const CartPage: FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -29,6 +29,9 @@ const CartPage: FC = () => {
     router.push("/")
 
   }
+  function changeamount(id: string, command: string) {
+
+  }
 
   return (
     <Layout cartItemCount={ allItemQuantity}>
@@ -43,7 +46,12 @@ const CartPage: FC = () => {
                   <div className={styles.price}>{cartItem.product.price}円</div>
                 </div>
                 <div className={styles.productName}>{cartItem.product.name}</div>
-                <div >{ cartItem.quantity}個</div>
+                <div >{cartItem.quantity}個</div>
+                <div className={cartstyles.addbuttons} >
+                  <button className={cartstyles.changecountbutton}>+</button>
+                  <button className={cartstyles.changecountbutton}>-</button>
+
+                </div>
               </a>
             </Link>
           </li>
